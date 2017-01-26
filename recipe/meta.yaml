@@ -14,12 +14,26 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: true
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
     - vc14  # [win and py35]
+  always_include_files:
+    # Workaround for dummy X11 headers in OSX `tk` package; note that these are regexes:
+    - include/X11/cursorfont\.h
+    - include/X11/ImUtil\.h
+    - include/X11/Xcms\.h
+    - include/X11/XKBlib\.h
+    - include/X11/XlibConf\.h
+    - include/X11/Xlib\.h
+    - include/X11/Xlibint\.h
+    - include/X11/Xlib-xcb\.h
+    - include/X11/Xlocale\.h
+    - include/X11/Xregion\.h
+    - include/X11/Xresource\.h
+    - include/X11/Xutil\.h
 
 requirements:
   build:
