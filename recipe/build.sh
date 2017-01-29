@@ -28,5 +28,12 @@ fi
 make -j$CPU_COUNT
 make install
 make check
-rm -rf $PREFIX/share/doc/${PKG_NAME#xorg-}
-rm -f $PREFIX/lib/libX11.a $PREFIX/lib/libX11.la
+
+rm -rf $PREFIX/share/doc/libX11 $PREFIX/share/man
+
+# Prefer dynamic libraries to static, and dump libtool helper files
+for lib_ident in X11 X11-xcb; do
+    if [ -e $PREFIX/lib/lib${lib_ident}$SHLIB_EXT ] ; then
+        rm -f $PREFIX/lib/lib${lib_ident}.a $PREFIX/lib/lib${lib_ident}.la
+    fi
+done
