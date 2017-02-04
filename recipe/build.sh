@@ -32,6 +32,11 @@ if [ -n "$VS_MAJOR" ] ; then
         -I "$mprefix/mingw-w64/share/aclocal" # note: this is correct for win32 also!
     )
     autoreconf "${autoreconf_args[@]}"
+
+    # And we need to add the search path that lets libtool find the
+    # msys2 stub libraries for ws2_32.
+    platlibs=$(cd $(dirname $(gcc --print-prog-name=ld))/../lib && pwd -W)
+    export LDFLAGS="$LDFLAGS -L$platlibs"
 fi
 
 export PKG_CONFIG_LIBDIR=$uprefix/lib/pkgconfig:$uprefix/share/pkgconfig
