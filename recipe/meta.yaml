@@ -20,7 +20,7 @@ build:
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
-    - vc14  # [win and py35]
+    - vc14  # [win and py>=35]
   always_include_files:
     # Workaround for dummy X11 headers in OSX `tk` package
     - include/X11/cursorfont.h
@@ -49,7 +49,7 @@ requirements:
     - toolchain
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
+    - vc 14  # [win and py>=35]
     - xorg-inputproto
     - xorg-kbproto
     - xorg-libxcb 1.*
@@ -61,7 +61,7 @@ requirements:
   run:
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
+    - vc 14  # [win and py>=35]
     - xorg-kbproto
     - xorg-libxcb 1.*
     - xorg-xproto
