@@ -3,6 +3,7 @@
 {% set name = "xorg-" ~ xorg_name %}
 {% set version = "1.6.4" %}
 {% set sha256 = "b7c748be3aa16ec2cbd81edc847e9b6ee03f88143ab270fb59f58a044d34e441" %}
+{% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
   name: {{ name|lower }}
@@ -14,12 +15,12 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 5
   detect_binary_files_with_prefix: true
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
-    - vc14  # [win and py35]
+    - vc14  # [win and py>=35]
   always_include_files:
     # Workaround for dummy X11 headers in OSX `tk` package
     - include/X11/cursorfont.h
@@ -37,6 +38,9 @@ build:
 
 requirements:
   build:
+    - m2-autoconf  # [win]
+    - m2-automake{{ am_version }}  # [win]
+    - m2-libtool  # [win]
     - m2w64-pkg-config  # [win]
     - m2w64-toolchain  # [win]
     - pkg-config  # [not win]
@@ -45,10 +49,10 @@ requirements:
     - toolchain
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
+    - vc 14  # [win and py>=35]
     - xorg-inputproto
     - xorg-kbproto
-    - xorg-libxcb
+    - xorg-libxcb 1.*
     - xorg-util-macros
     - xorg-xcb-proto
     - xorg-xextproto
@@ -57,9 +61,9 @@ requirements:
   run:
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
+    - vc 14  # [win and py>=35]
     - xorg-kbproto
-    - xorg-libxcb
+    - xorg-libxcb 1.*
     - xorg-xproto
 
 test:
