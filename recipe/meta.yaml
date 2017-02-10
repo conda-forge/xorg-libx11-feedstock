@@ -15,7 +15,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 5
+  number: 6
   detect_binary_files_with_prefix: true
   features:
     - vc9  # [win and py27]
@@ -52,9 +52,10 @@ requirements:
     - vc 14  # [win and py>=35]
     - xorg-inputproto
     - xorg-kbproto
-    - xorg-libxcb 1.*
+    - libxcb 1.*
+    - pthread-stubs
     - xorg-util-macros
-    - xorg-xcb-proto
+    - xcb-proto
     - xorg-xextproto
     - xorg-xproto
     - xorg-xtrans
@@ -63,7 +64,7 @@ requirements:
     - vc 10  # [win and py34]
     - vc 14  # [win and py>=35]
     - xorg-kbproto
-    - xorg-libxcb 1.*
+    - libxcb 1.*
     - xorg-xproto
 
 test:
