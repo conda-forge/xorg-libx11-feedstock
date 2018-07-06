@@ -1,0 +1,4 @@
+c_compiler:
+- vs2015
+m2w64_c_compiler:
+- m2w64-toolchain
