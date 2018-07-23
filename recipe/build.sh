@@ -20,6 +20,12 @@ else
     uprefix="$PREFIX"
 fi
 
+# Cf. https://github.com/conda-forge/staged-recipes/issues/673, we're in the
+# process of excising Libtool files from our packages. Existing ones can break
+# the build while this happens. We have "/." at the end of $uprefix to be safe
+# in case the variable is empty.
+find $uprefix/. -name '*.la' -delete
+
 # On Windows we need to regenerate the configure scripts.
 if [ -n "$CYGWIN_PREFIX" ] ; then
     am_version=1.15 # keep sync'ed with meta.yaml
@@ -42,6 +48,7 @@ fi
 export PKG_CONFIG_LIBDIR=$uprefix/lib/pkgconfig:$uprefix/share/pkgconfig
 configure_args=(
     --prefix=$mprefix
+    --disable-static
     --disable-dependency-tracking
     --disable-selective-werror
     --disable-silent-rules
@@ -59,9 +66,6 @@ make check
 
 rm -rf $uprefix/share/doc/libX11 $uprefix/share/man
 
-# Non-Windows: prefer dynamic libraries to static, and dump libtool helper files
-if [ -z "$CYGWIN_PREFIX" ] ; then
-    for lib_ident in X11 X11-xcb; do
-        rm -f $uprefix/lib/lib${lib_ident}.la $uprefix/lib/lib${lib_ident}.a
-    done
-fi
+# Remove any new Libtool files we may have installed. It is intended that
+# conda-build will eventually do this automatically.
+find $uprefix/. -name '*.la' -delete
