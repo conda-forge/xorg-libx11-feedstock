@@ -48,7 +48,6 @@ requirements:
     - libxcb 1.*
     - pthread-stubs
     - xorg-util-macros
-    - xcb-proto
     - xorg-xextproto
     - xorg-xproto
     - xorg-xtrans
