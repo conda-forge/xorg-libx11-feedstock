@@ -62,7 +62,7 @@ fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
     export CPP=clang-cpp
-    ln -s $PREFIX/bin/clang-cpp $PREFIX/bin/cpp
+    ln -s $BUILD_PREFIX/bin/clang-cpp $BUILD_PREFIX/bin/cpp
 fi
 
 export PKG_CONFIG_LIBDIR=$uprefix/lib/pkgconfig:$uprefix/share/pkgconfig
