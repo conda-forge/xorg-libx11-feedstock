@@ -62,6 +62,7 @@ fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
     export CPP=clang-cpp
+    export RAWCPP=clang-cpp
 fi
 
 export PKG_CONFIG_LIBDIR=$uprefix/lib/pkgconfig:$uprefix/share/pkgconfig
