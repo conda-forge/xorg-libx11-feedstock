@@ -49,6 +49,7 @@ requirements:
     - automake                      # [unix]
     - gettext                       # [unix]
     - libtool                       # [unix]
+    - sed                           # [unix]
   host:
     - xorg-inputproto
     - xorg-kbproto
