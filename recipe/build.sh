@@ -44,6 +44,9 @@ if [ -n "$CYGWIN_PREFIX" ] ; then
     # msys2 stub libraries for ws2_32.
     platlibs=$(cd $(dirname $(gcc --print-prog-name=ld))/../lib && pwd -W)
     export LDFLAGS="$LDFLAGS -L$platlibs"
+
+    # Needed to get X11/X.h
+    export CFLAGS="$CFLAGS -I$LIBRARY_PREFIX_U/include"
 else
     # for other platforms we just need to reconf to get the correct achitecture
     echo libtoolize
