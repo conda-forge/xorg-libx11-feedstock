@@ -1,8 +1,8 @@
 {% set xorg_name = "libX11" %}
 {% set xorg_category = "lib" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.6.8" %}
-{% set sha256 = "b289a845c189e251e0e884cc0f9269bbe97c238df3741e854ec4c17c21e473d5" %}
+{% set version = "1.6.9" %}
+{% set sha256 = "9cc7e8d000d6193fa5af580d50d689380b8287052270f5bb26a5fb6b58b2bed1" %}
 {% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
