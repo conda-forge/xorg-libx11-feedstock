@@ -5,11 +5,9 @@ Home: https://www.x.org/
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xorg-libx11-feedstock/blob/master/LICENSE.txt)
 
 Summary: The main client library for X Windows version 11.
-
-
 
 Current build status
 ====================
