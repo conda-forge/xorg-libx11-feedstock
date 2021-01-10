@@ -1,4 +1,6 @@
 #! /bin/bash
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 set -e
 set -x
@@ -86,7 +88,9 @@ fi
 ./configure "${configure_args[@]}"
 make -j$CPU_COUNT
 make install
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 make check
+fi
 
 rm -rf $uprefix/share/doc/libX11 $uprefix/share/man
 
