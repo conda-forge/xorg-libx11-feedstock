@@ -85,6 +85,10 @@ if [ -n "$CYGWIN_PREFIX" ] ; then
     configure_args+=(--disable-unix-transport)
 fi
 
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
+    export xorg_cv_malloc0_returns_null=yes
+fi
+
 ./configure "${configure_args[@]}"
 make -j$CPU_COUNT
 make install
