@@ -10,14 +10,15 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
   url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
   patches:
     - macos-sed-workaround.patch  # avoid "sed: RE error: illegal byte sequence"
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage(name|lower) }}
   detect_binary_files_with_prefix: true
   always_include_files:
     # Workaround for dummy X11 headers in OSX `tk` package
