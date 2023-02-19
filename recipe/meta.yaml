@@ -13,7 +13,8 @@ source:
   url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
   patches:
-    - macos-sed-workaround.patch  # avoid "sed: RE error: illegal byte sequence"
+    # avoid "sed: RE error: illegal byte sequence"
+    - macos-sed-workaround.patch
 
 build:
   number: 1
