@@ -11,7 +11,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.bz2
-  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
+  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
   patches:
     - macos-sed-workaround.patch  # avoid "sed: RE error: illegal byte sequence"
