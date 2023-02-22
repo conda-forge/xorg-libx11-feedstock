@@ -10,12 +10,13 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
   url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
 
 build:
   number: 0
+  run_exports:
+    - {{ pin_subpackage(name|lower) }}
   detect_binary_files_with_prefix: true
   always_include_files:
     # Workaround for dummy X11 headers in OSX `tk` package
