@@ -3,9 +3,11 @@
 {% set name = "xorg-" ~ xorg_name %}
 # {% set version = "1.7.5" %}   # good
 # {% set sha256 = "5a1847e2e2c248e1a203a24a1338a5586d6f48472eac58f6f08539110a965151" %}
-{% set version = "1.8.2" %}
-{% set sha256 = "ed91d573d570db83b8ae546f4890dccfcd0b9dfe1e50a1b401b63a74c152ed04" %}
-# {% set version = "1.8.2" %}  # bad
+# {% set version = "1.8.2" %}  # good
+# {% set sha256 = "ed91d573d570db83b8ae546f4890dccfcd0b9dfe1e50a1b401b63a74c152ed04" %}
+{% set version = "1.8.3" %}
+{% set sha256 = "e31565c84006b6b8e01dc9399c806085739710bc2db2e0930f1511ed9d6585bd" %}
+# {% set version = "1.8.4" %}  # bad
 {% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
