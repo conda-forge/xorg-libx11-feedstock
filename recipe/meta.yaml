@@ -1,8 +1,8 @@
 {% set xorg_name = "libX11" %}
 {% set xorg_category = "lib" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.7.2" %}
-{% set sha256 = "1cfa35e37aaabbe4792e9bb690468efefbfbf6b147d9c69d6f90d13c3092ea6c" %}
+{% set version = "1.7.5" %}
+{% set sha256 = "5a1847e2e2c248e1a203a24a1338a5586d6f48472eac58f6f08539110a965151" %}
 {% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.bz2
-  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
+  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
   patches:
     - macos-sed-workaround.patch  # avoid "sed: RE error: illegal byte sequence"
