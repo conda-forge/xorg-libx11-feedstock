@@ -1,0 +1,14 @@
+diff --git a/include/X11/Xlibint.h b/include/X11/Xlibint.h
+index 50099b43..6af2beb1 100644
+--- a/include/X11/Xlibint.h
++++ b/include/X11/Xlibint.h
+@@ -44,6 +44,9 @@ from The Open Group.
+ #include <X11/XlibConf.h>	/* for configured options like XTHREADS */
+ 
+ #ifdef XTHREADS
++#ifdef WIN32
++#include <X11/Xwindows.h>
++#endif
+ #include <X11/Xthreads.h>
+ #endif
+ 

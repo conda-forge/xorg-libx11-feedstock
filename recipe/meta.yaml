@@ -12,6 +12,8 @@ package:
 source:
   url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
+  patches:
+    - windows_compat.patch
 
 build:
   number: 0
