@@ -1,10 +1,7 @@
 #! /bin/bash
-# Get an updated config.sub and config.guess
-cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 set -e
 set -x
-IFS=$' \t\n' # workaround for conda 4.2.13+toolchain bug
 
 # Adopt a Unix-friendly path if we're on Windows (see bld.bat).
 [ -n "$PATH_OVERRIDE" ] && export PATH="$PATH_OVERRIDE"
