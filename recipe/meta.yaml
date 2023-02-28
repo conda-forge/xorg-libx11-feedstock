@@ -13,6 +13,7 @@ source:
   url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
   patches:
+    # https://gitlab.freedesktop.org/xorg/proto/xorgproto/-/issues/44
     - windows_compat.patch
 
 build:
