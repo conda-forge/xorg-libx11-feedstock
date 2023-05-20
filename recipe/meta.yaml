@@ -17,7 +17,7 @@ source:
     - windows_compat.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name|lower) }}
   detect_binary_files_with_prefix: true
@@ -56,7 +56,7 @@ requirements:
   host:
     - xorg-inputproto
     - xorg-kbproto
-    - libxcb 1.*
+    - libxcb
     - pthread-stubs
     - xorg-util-macros
     - xorg-xextproto
@@ -64,7 +64,6 @@ requirements:
     - xorg-xtrans
   run:
     - xorg-kbproto
-    - libxcb 1.*
     - xorg-xproto
 
 test:
