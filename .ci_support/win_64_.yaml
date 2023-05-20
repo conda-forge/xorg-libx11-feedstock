@@ -2,6 +2,8 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+libxcb:
+- '1.15'
 m2w64_c_compiler:
 - m2w64-toolchain
 target_platform:
