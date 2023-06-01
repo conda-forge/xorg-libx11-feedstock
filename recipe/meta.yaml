@@ -1,8 +1,8 @@
 {% set xorg_name = "libX11" %}
 {% set xorg_category = "lib" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.8.4" %}
-{% set sha256 = "c9a287a5aefa9804ce3cfafcf516fe96ed3f7e8e45c0e2ee59e84c86757df518" %}
+{% set version = "1.8.5" %}
+{% set sha256 = "e362c6f03c793171becd1ce2078c64789504c7d7ff48ee40a76ff76b59f6b561" %}
 {% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
@@ -17,7 +17,7 @@ source:
     - windows_compat.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage(name|lower) }}
   detect_binary_files_with_prefix: true
