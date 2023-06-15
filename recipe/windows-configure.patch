@@ -1,5 +1,5 @@
 diff --git a/configure.ac b/configure.ac
-index 6184cd4..66275d0 100644
+index 045dbb8..90fc847 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -1,6 +1,9 @@
@@ -8,8 +8,8 @@ index 6184cd4..66275d0 100644
 -AC_PREREQ([2.70])
 +# conda-forge patch: upstream requires Autoconf 2.70, but our Windows tooling
 +# only provides 2.69 and is difficult to update. But it appears that we can
-+# get away with 1.69, so:
++# get away with 2.69, so:
 +AC_PREREQ([2.69])
- AC_INIT([libX11], [1.8.5],
+ AC_INIT([libX11], [1.8.6],
          [https://gitlab.freedesktop.org/xorg/lib/libx11/-/issues], [libX11])
  AC_CONFIG_SRCDIR([Makefile.am])
