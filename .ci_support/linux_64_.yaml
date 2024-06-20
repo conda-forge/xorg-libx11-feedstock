@@ -15,7 +15,7 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 libxcb:
-- '1.15'
+- '1.16'
 target_platform:
 - linux-64
 zip_keys:
