@@ -18,7 +18,7 @@ source:
     - windows-configure.patch  # [win]
 
 build:
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage(name|lower) }}
   detect_binary_files_with_prefix: true
@@ -42,9 +42,9 @@ requirements:
     - m2-autoconf                   # [win]
     - m2-automake{{ am_version }}   # [win]
     - m2-libtool                    # [win]
-    - m2w64-pkg-config              # [win]
+    - pkg-config              # [win]
     - pkg-config                    # [not win]
-    - posix                         # [win]
+    - m2-base                         # [win]
     - gnuconfig                     # [unix]
     - {{ compiler('c') }}           # [unix]
     - {{ stdlib('c') }}             # [unix]
