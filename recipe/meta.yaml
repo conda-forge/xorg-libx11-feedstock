@@ -42,32 +42,29 @@ requirements:
     - m2-autoconf                   # [win]
     - m2-automake{{ am_version }}   # [win]
     - m2-libtool                    # [win]
-    - m2w64-pkg-config              # [win]
-    - pkg-config                    # [not win]
-    - posix                         # [win]
+    - pkg-config                    # [unix]
+    - m2-pkg-config                 # [win]
     - gnuconfig                     # [unix]
+    - m2-base                       # [win]
+    - make                          # [unix]
+    - m2-make                       # [win]
     - {{ compiler('c') }}           # [unix]
     - {{ stdlib('c') }}             # [unix]
     - {{ compiler('m2w64_c') }}     # [win]
     - {{ stdlib('m2w64_c') }}       # [win]
-    - make                          # [unix]
     - autoconf                      # [unix]
     - automake                      # [unix]
     - gettext                       # [unix]
     - libtool                       # [unix]
     - sed                           # [unix]
   host:
-    - xorg-inputproto
-    - xorg-kbproto
+    - xorg-xorgproto
     - libxcb
     - pthread-stubs
     - xorg-util-macros
-    - xorg-xextproto
-    - xorg-xproto
     - xorg-xtrans
   run:
-    - xorg-kbproto
-    - xorg-xproto
+    - xorg-xorgproto
 
 test:
   commands:
