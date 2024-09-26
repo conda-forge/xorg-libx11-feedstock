@@ -15,7 +15,6 @@ source:
   patches:
     # https://gitlab.freedesktop.org/xorg/proto/xorgproto/-/issues/44
     - windows_compat.patch
-    - windows-configure.patch  # [win]
 
 build:
   number: 0
