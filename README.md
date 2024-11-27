@@ -199,6 +199,3 @@ Feedstock Maintainers
 
 * [@pkgw](https://github.com/pkgw/)
 
-
-<!-- dummy commit to enable rerendering -->
-
