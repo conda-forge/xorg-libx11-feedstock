@@ -17,7 +17,7 @@ source:
     - windows_compat.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name|lower) }}
   detect_binary_files_with_prefix: true
@@ -62,8 +62,6 @@ requirements:
     - pthread-stubs
     - xorg-util-macros
     - xorg-xtrans
-  run:
-    - xorg-xorgproto
 
 test:
   commands:
