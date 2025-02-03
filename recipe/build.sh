@@ -49,15 +49,10 @@ if [ -n "$CYGWIN_PREFIX" ] ; then
     export CFLAGS="$CFLAGS -I$LIBRARY_PREFIX_U/include"
 else
     # for other platforms we just need to reconf to get the correct achitecture
-    echo libtoolize
-    libtoolize
-    echo aclocal -I $PREFIX/share/aclocal -I $BUILD_PREFIX/share/aclocal
+    libtoolize --force
     aclocal -I $PREFIX/share/aclocal -I $BUILD_PREFIX/share/aclocal
-    echo autoheader
     autoheader
-    echo autoconf
     autoconf
-    echo automake --force-missing --add-missing --include-deps
     automake --force-missing --add-missing --include-deps
 
     export CONFIG_FLAGS="--build=${BUILD}"
