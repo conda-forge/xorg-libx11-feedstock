@@ -10,3 +10,19 @@ index 50099b4..4b388f4 100644
  #endif
  
  /* The Xlib structs are full of implicit padding to properly align members.
+diff --git a/src/XlibInt.c b/src/XlibInt.c
+index 1949111..575feaf 100644
+--- a/src/XlibInt.c
++++ b/src/XlibInt.c
+@@ -1250,8 +1250,10 @@ SocketBytesReadable(Display *dpy)
+ {
+     int bytes = 0, last_error;
+ #ifdef WIN32
++    u_long long_bytes = 0;
+     last_error = WSAGetLastError();
+-    ioctlsocket(ConnectionNumber(dpy), FIONREAD, &bytes);
++    ioctlsocket(ConnectionNumber(dpy), FIONREAD, &long_bytes);
++    bytes = (int) long_bytes;
+     WSASetLastError(last_error);
+ #else
+     last_error = errno;
