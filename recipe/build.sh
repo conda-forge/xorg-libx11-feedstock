@@ -58,11 +58,6 @@ else
     export CONFIG_FLAGS="--build=${BUILD}"
 fi
 
-if [[ "$(uname)" == "Darwin" ]]; then
-    export CPP=clang-cpp
-    ln -s $BUILD_PREFIX/bin/clang-cpp $BUILD_PREFIX/bin/cpp
-fi
-
 export PKG_CONFIG_LIBDIR=$uprefix/lib/pkgconfig:$uprefix/share/pkgconfig
 configure_args=(
     $CONFIG_FLAGS
